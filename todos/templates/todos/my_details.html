@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "todos/base.html" %}
+{% block content %}
+<div class="container">
+    <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"><i class="fa fa-list "></i> My Details</h1>
+          </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Location</th>
+              <th>Action</th>
+          </tr>
+          <tr class="success">
+              <td>{{ user.id }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.email}}</td>
+              <td>{{ user.profile.location}}</td>
+              <td><a class="btn btn-primary btn-sm" href="{% url 'profile' %}">Update</a></td>
+          </tr>
+        </table>
+    </div>
+
+</div>
+{% endblock content %}
